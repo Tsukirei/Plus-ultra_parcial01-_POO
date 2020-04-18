@@ -2,7 +2,7 @@ package com.RHFA_00118519.x;
 
 import java.util.ArrayList;
 
-public class Empleado {
+public abstract class Empleado {
     protected String nombre;
     protected String puesto;
     protected ArrayList<Documento> documentos;
@@ -25,6 +25,7 @@ public class Empleado {
     public ArrayList<Documento> getDocumentos() {
         return documentos;
     }
+
     public void addDocumento(Documento documentos){
 
     }
