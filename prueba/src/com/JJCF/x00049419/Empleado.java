@@ -1,4 +1,4 @@
-package com.RHFA_00118519.x;
+package com.JJCF.x00049419;
 
 import java.util.ArrayList;
 
@@ -36,6 +36,16 @@ public abstract class Empleado {
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", puesto='" + puesto + '\'' +
+                ", documentos=" + documentos +
+                ", salario=" + salario +
+                '}';
     }
 }
 

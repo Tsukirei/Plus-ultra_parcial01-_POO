@@ -1,4 +1,4 @@
-package com.RHFA_00118519.x;
+package com.JJCF.x00049419;
 
 public class ServicioProfesional extends Empleado{
     private int mesesContrato;

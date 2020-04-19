@@ -69,6 +69,7 @@ public class Main {
                           Documento registroDoc2 = new Documento(user, dui);
                           workerPF.addDocumento(registroDoc2);
                           port.addEmpleado(workerPF);
+
                           break;
                       default:
                           System.out.println("Error");
@@ -81,9 +82,16 @@ public class Main {
                   System.out.println("Ingrese el nombre del empleado a despedir");
                   leaveTrabajo = leave1.nextLine();
                   port.quitEmpleado(leaveTrabajo);
+                  break;
 
 
+<<<<<<< HEAD
               case 3: port.toString(); break;
+=======
+              case 3:
+                  System.out.println("Mostrando:");
+                  System.out.println(port.toString());
+>>>>>>> 119e5fc8c022bb29496451174399b4c0c54a264b
 
               case 4:
 
