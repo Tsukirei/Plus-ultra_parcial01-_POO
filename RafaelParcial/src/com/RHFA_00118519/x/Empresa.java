@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Empresa {
     private String nombre;
-    private ArrayList<Empleado> planilla;
+    private ArrayList<Empleado> planilla = new ArrayList<>();
 
     public Empresa(String nombre){
         this.nombre = nombre;
@@ -21,7 +21,17 @@ public class Empresa {
     public void addEmpleado(Empleado trabajador){
         planilla.add(trabajador);
     }
-    public void quitEmpleado(Empleado despido){
-        planilla.remove(despido);
+    public void quitEmpleado(String despido) {
+        for(Empleado prueba: planilla) {
+            if (prueba.nombre.equalsIgnoreCase(despido)) {
+                planilla.remove(despido);
+                System.out.println("Se ha hecho el despido exitosamente");
+            }
+            else{
+                System.out.println("El empleado no se encuentra");
+        }
+
+        }
     }
+
 }
