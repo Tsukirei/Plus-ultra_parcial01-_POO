@@ -10,58 +10,76 @@ public class Main {
         Scanner lect2 = new Scanner(System.in);
         Scanner lect3 = new Scanner(System.in);
         Scanner lect4 = new Scanner(System.in);
+        Scanner lect5 = new Scanner(System.in);
+        Scanner lect6 = new Scanner(System.in);
         Scanner leave1 = new Scanner(System.in);
         String leaveTrabajo;
         String user;
         String type;
+        int law;
         int opc;
         byte opc2;
-        int dui;
+        String dui;
+        int ext;
         double pagoPrimerizo;
 
-
+        do{
         System.out.println("Plus Ultra.inc");
         System.out.println("\nRegistro de empleados");
         System.out.println("1) Agregar empleado" + "\n2) Despedir empleado" + "\n3) Ver lista de empleados"
-        + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "Opcion escogida: ");
+        + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "\n6) Salir" + "\nOpcion escogida: ");
         opc = toma.nextInt();
 
-        switch(opc) {
+          switch (opc) {
 
-            case 1:
-                System.out.println("Ingrese el nombre del empleado: ");
-                user = lect1.nextLine();
-                System.out.println("¿Que puesto maneja el empleado? \n1)Servicio Profesional\n2)Plaza Fija\nOpcion a escoger: ");
-                opc2 = lect2.nextByte();
+              case 1:
+                  System.out.print("Ingrese el nombre del empleado: ");
+                  user = lect1.nextLine();
+                  System.out.print("¿Que puesto maneja el empleado? \n1)Servicio Profesional\n2)Plaza Fija\nOpcion a escoger: ");
+                  opc2 = lect2.nextByte();
 
-                switch (opc2) {
-                    case 1:
-                        type = "Servicio Profesional";
-                        break;
-                    case 2:
-                        type = "Plaza Fija";
-                        break;
-                    default:
-                        System.out.println("Error");
-                        break;
-                }
+                  switch (opc2) {
+                      case 1:
+                          type = "Servicio Profesional";
+                          System.out.print("Numero de DUI: ");
+                          dui = lect3.nextLine();
+                          System.out.print("Salario primerizo del empleado: ");
+                          pagoPrimerizo = lect4.nextDouble();
+                          System.out.print("Ingrese los meses de su contrato: ");
+                          law = lect5.nextInt();
+                          new ServicioProfesional(user, type, pagoPrimerizo, law);
+                          new Documento(user, dui);
+                          break;
+                      case 2:
+                          type = "Plaza Fija";
+                          System.out.print("Numero de DUI: ");
+                          dui = lect3.nextLine();
+                          System.out.print("Salario primerizo del empleado: ");
+                          pagoPrimerizo = lect4.nextDouble();
+                          System.out.print("Ingrese la extension del empleado: ");
+                          ext = lect6.nextInt();
+                          new PlazaFija(user, type, pagoPrimerizo, ext);
+                          new Documento(user, dui);
+                          break;
+                      default:
+                          System.out.println("Error");
+                          break;
 
-                System.out.println("Numero de DUI: ");
-                dui = lect3.nextInt();
-                System.out.println("Salario primerizo del empleado: ");
-                pagoPrimerizo = lect4.nextDouble(); break;
+                  }
+                  break;
 
+              case 2:
+                  System.out.println("Nombre del empleado a despedir: ");
+                  leaveTrabajo = leave1.nextLine();
+                  new Empresa(leaveTrabajo);
 
-            case 2:
-                System.out.println("Nombre del empleado a despedir: ");
-                leaveTrabajo = leave1.nextLine();
+              case 5:
+                  //System.out.print();
 
-                Empresa PlusUltra = new Empresa(leaveTrabajo); break;
+              case 6:
+                  opc = 6;
 
-
-
-        }
-
-
+          }
+      }while (opc != 6);
     }
 }
