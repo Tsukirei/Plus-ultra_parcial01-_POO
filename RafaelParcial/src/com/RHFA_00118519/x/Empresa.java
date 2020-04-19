@@ -2,9 +2,9 @@ package com.RHFA_00118519.x;
 
 import java.util.ArrayList;
 
-public class Empresa {
+public  class Empresa {
     private String nombre;
-    private ArrayList<Empleado> planilla = new ArrayList<>();
+    private ArrayList<Empleado> planilla;
 
     public Empresa(String nombre){
         this.nombre = nombre;
@@ -18,26 +18,10 @@ public class Empresa {
         return planilla;
     }
 
-    @Override
-    public String toString() {
-        return " planilla=" + planilla +
-                '}';
-    }
-
     public void addEmpleado(Empleado trabajador){
         planilla.add(trabajador);
     }
-    public void quitEmpleado(String despido) {
-        for(Empleado prueba: planilla) {
-            if (prueba.nombre.equalsIgnoreCase(despido)) {
-                planilla.remove(despido);
-                System.out.println("Se ha hecho el despido exitosamente");
-            }
-            else{
-                System.out.println("El empleado no se encuentra");
-        }
-
-        }
+    public void quitEmpleado(Empleado despido){
+        planilla.remove(despido);
     }
-
 }
