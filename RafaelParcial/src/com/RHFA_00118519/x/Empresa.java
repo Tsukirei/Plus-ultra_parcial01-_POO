@@ -18,6 +18,12 @@ public class Empresa {
         return planilla;
     }
 
+    @Override
+    public String toString() {
+        return " planilla=" + planilla +
+                '}';
+    }
+
     public void addEmpleado(Empleado trabajador){
         planilla.add(trabajador);
     }
