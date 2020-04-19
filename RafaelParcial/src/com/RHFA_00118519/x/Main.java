@@ -22,12 +22,14 @@ public class Main {
         String dui;
         int ext;
         double pagoPrimerizo;
+        Empresa port;
 
         do{
         System.out.println("Plus Ultra.inc");
         System.out.println("\nRegistro de empleados");
         System.out.println("1) Agregar empleado" + "\n2) Despedir empleado" + "\n3) Ver lista de empleados"
-        + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "\n6) Salir" + "\nOpcion escogida: ");
+        + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "\n6) Salir");
+        System.out.print("Opcion escogida: ");
         opc = toma.nextInt();
 
           switch (opc) {
@@ -49,6 +51,7 @@ public class Main {
                           law = lect5.nextInt();
                           new ServicioProfesional(user, type, pagoPrimerizo, law);
                           new Documento(user, dui);
+                          new Empresa(user);
                           break;
                       case 2:
                           type = "Plaza Fija";
@@ -60,6 +63,8 @@ public class Main {
                           ext = lect6.nextInt();
                           new PlazaFija(user, type, pagoPrimerizo, ext);
                           new Documento(user, dui);
+                          new Empresa(user);
+
                           break;
                       default:
                           System.out.println("Error");
@@ -71,7 +76,9 @@ public class Main {
               case 2:
                   System.out.println("Nombre del empleado a despedir: ");
                   leaveTrabajo = leave1.nextLine();
-                  new Empresa(leaveTrabajo);
+                  port.quitEmpleado(leaveTrabajo);
+
+
 
               case 5:
                   //System.out.print();
