@@ -83,7 +83,7 @@ public class Main {
                   port.quitEmpleado(leaveTrabajo);
 
 
-              case 3:
+              case 3: port.toString(); break;
 
               case 4:
 

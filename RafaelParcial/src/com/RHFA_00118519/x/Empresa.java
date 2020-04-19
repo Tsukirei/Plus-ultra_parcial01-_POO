@@ -19,12 +19,13 @@ public class Empresa {
     }
 
     public void addEmpleado(Empleado trabajador){
+
         planilla.add(trabajador);
     }
     public void quitEmpleado(String despido) {
         for(Empleado prueba: planilla) {
             if (prueba.nombre.equalsIgnoreCase(despido)) {
-                planilla.remove(despido);
+                planilla.removeIf(m->m.getNombre().equalsIgnoreCase(despido));
                 System.out.println("Se ha hecho el despido exitosamente");
             }
             else{
@@ -34,4 +35,13 @@ public class Empresa {
         }
     }
 
+    @Override
+    public String toString() {
+        for(int i = 0; i < planilla; i++){
+
+            return String.valueOf(i);
+        }
+
+        return String.valueOf(i)
+    }
 }
