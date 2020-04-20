@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public  class Empresa {
     private String nombre;
-    private ArrayList<Empleado> planilla;
+    private ArrayList<Empleado> planilla = new ArrayList<>();
 
     public Empresa(String nombre) {
         this.nombre = nombre;
@@ -35,11 +35,11 @@ public  class Empresa {
         }
     }
 
+    @Override
     public String toString() {
-        for (int i = 0; i < planilla; i++) {
-
-            return String.valueOf(i);
-        }
-
+        return "Empresa{" +
+                "nombre='" + nombre + '\'' +
+                ", planilla=" + planilla +
+                '}';
     }
 }

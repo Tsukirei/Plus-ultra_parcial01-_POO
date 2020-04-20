@@ -16,17 +16,19 @@ public class Main {
         String leaveTrabajo;
         String user;
         String type;
+        String Inc = "Plus Ultra.inc";
         int law;
         int opc;
         byte opc2;
         String dui;
         int ext;
         double pagoPrimerizo;
-        Empresa port;
+        Empresa port = new Empresa(Inc);
+
 
 
         do{
-            System.out.println("Plus Ultra.inc");
+            System.out.println(Inc);
             System.out.println("\nRegistro de empleados");
             System.out.println("1) Agregar empleado" + "\n2) Despedir empleado" + "\n3) Ver lista de empleados"
                     + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "\n6) Salir");
@@ -50,9 +52,10 @@ public class Main {
                             pagoPrimerizo = lect4.nextDouble();
                             System.out.print("Ingrese los meses de su contrato: ");
                             law = lect5.nextInt();
-                            port.addEmpleado(new ServicioProfesional(user, type, pagoPrimerizo, law);)
-                            new Documento(user, dui);
-                            new Empresa(user);
+                            Documento registroDoc = new Documento(user, dui);
+                            ServicioProfesional empleadoSP = new ServicioProfesional(user, type, pagoPrimerizo, law);
+                            empleadoSP.addDocumento(registroDoc);
+                            port.addEmpleado(empleadoSP);
                             break;
                         case 2:
                             type = "Plaza Fija";
@@ -62,10 +65,9 @@ public class Main {
                             pagoPrimerizo = lect4.nextDouble();
                             System.out.print("Ingrese la extension del empleado: ");
                             ext = lect6.nextInt();
-                            port.addEmpleado(new PlazaFija(user, type, pagoPrimerizo, ext));
-                            new Documento(user, dui);
-                            new Empresa(user);
-
+                            PlazaFija empleadoPF = new PlazaFija(user, type, pagoPrimerizo, ext);
+                            Documento registroDoc2 = new Documento(user, dui);
+                            port.addEmpleado(empleadoPF);
                             break;
                         default:
                             System.out.println("Error");
@@ -77,19 +79,13 @@ public class Main {
                 case 2:
                     System.out.println("Nombre del empleado a despedir: ");
                     leaveTrabajo = leave1.nextLine();
-                    port.quitEmpleado(leaveTrabajo);
-
-                case 3: port.toString(); break;
+                    port.quitEmpleado(leaveTrabajo); break;
 
                 case 3:
                     System.out.println("Mostrando:");
-                    System.out.println(port.toString());
+                    System.out.println(port.toString()); break;
 
                 case 4:
-
-                    port.getPlanilla();
-
-
 
 
                 case 5:
