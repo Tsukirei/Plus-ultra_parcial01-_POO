@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
-=======
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
@@ -12,6 +8,5 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="true" project-jdk-name="9" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
->>>>>>> 424fe1d2994adcb3a7f4fa0fa6b3aaab796251da
   </component>
 </project>

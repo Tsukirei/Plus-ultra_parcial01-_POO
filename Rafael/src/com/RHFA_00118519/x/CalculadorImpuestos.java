@@ -68,4 +68,3 @@ public class CalculadorImpuestos {
                 +"Total AFP: "+ totalAFP;
     }
 }
-

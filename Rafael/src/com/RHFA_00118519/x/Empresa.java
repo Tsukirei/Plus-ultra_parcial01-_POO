@@ -6,7 +6,7 @@ public  class Empresa {
     private String nombre;
     private ArrayList<Empleado> planilla;
 
-    public Empresa(String nombre){
+    public Empresa(String nombre) {
         this.nombre = nombre;
     }
 
@@ -18,29 +18,28 @@ public  class Empresa {
         return planilla;
     }
 
-    public void addEmpleado(Empleado trabajador){
+    public void addEmpleado(Empleado trabajador) {
 
         planilla.add(trabajador);
     }
+
     public void quitEmpleado(String despido) {
-        for(Empleado prueba: planilla) {
+        for (Empleado prueba : planilla) {
             if (prueba.nombre.equalsIgnoreCase(despido)) {
-                planilla.removeIf(m->m.getNombre().equalsIgnoreCase(despido));
+                planilla.removeIf(m -> m.getNombre().equalsIgnoreCase(despido));
                 System.out.println("Se ha hecho el despido exitosamente");
-            }
-            else{
+            } else {
                 System.out.println("El empleado no se encuentra");
-        }
+            }
 
         }
     }
 
-    @Override
     public String toString() {
-        for(int i = 0; i < planilla; i++){
+        for (int i = 0; i < planilla; i++) {
 
             return String.valueOf(i);
         }
 
-        return String.valueOf(i)
     }
+}
