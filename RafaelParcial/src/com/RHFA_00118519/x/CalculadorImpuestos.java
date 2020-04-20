@@ -6,7 +6,7 @@ public class CalculadorImpuestos {
     private static double totalAFP;
     private static double pagoReal;
 
-    private void CalcularImpuestos() {
+    private void CalcularImpuestos(){
 
     }
 
@@ -29,40 +29,43 @@ public class CalculadorImpuestos {
                 totalAFP = AFP;
                 totalRenta = rentame;
                 totalISSS = ISSS;
-            } else if (((PlazaFija) mop).salario >= 472.01 && ((PlazaFija) mop).salario <= 895.24) {
+            }
+            else if (((PlazaFija) mop).salario >= 472.01 && ((PlazaFija) mop).salario <= 895.24) {
                 rentame = 0.1 * (restan - 472) + 17.67;
                 pagoReal = restan - rentame;
                 totalAFP = AFP;
                 totalRenta = rentame;
                 totalISSS = ISSS;
-            } else if (((PlazaFija) mop).salario >= 895.25 && ((PlazaFija) mop).salario <= 2038.10) {
+            }
+            else if (((PlazaFija) mop).salario >= 895.25 && ((PlazaFija) mop).salario <= 2038.10) {
                 rentame = 0.2 * (restan - 895.24) + 60;
                 pagoReal = restan - rentame;
                 totalAFP = AFP;
                 totalRenta = rentame;
                 totalISSS = ISSS;
-            } else if (((PlazaFija) mop).salario >= 2038.11) {
+            }
+            else if (((PlazaFija) mop).salario >= 2038.11) {
                 rentame = 0.1 * (restan - 2038.10) + 288.57;
                 pagoReal = restan - rentame;
                 totalAFP = AFP;
                 totalRenta = rentame;
                 totalISSS = ISSS;
-
-            } else if (mop instanceof ServicioProfesional) {
-                double renta2;
-                renta2 = ((ServicioProfesional) mop).salario * 0.1;
-                pagoReal = ((ServicioProfesional) mop).salario - renta2;
             }
+
+
+        } else if (mop instanceof ServicioProfesional) {
+            double renta2;
+            renta2 = ((ServicioProfesional) mop).salario * 0.1;
+            pagoReal = ((ServicioProfesional) mop).salario - renta2;
+
         }
 
+    }
 
-
-   /* public String mostrarTotales() {
+    public String mostrarTotales() {
         return "Total ISSS: "+ totalISSS
                 +"Total Renta: "+ totalRenta
                 +"Total AFP: "+ totalAFP;
-    }*/
-
     }
 }
 

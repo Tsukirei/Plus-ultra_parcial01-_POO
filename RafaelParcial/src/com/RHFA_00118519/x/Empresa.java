@@ -2,9 +2,9 @@ package com.RHFA_00118519.x;
 
 import java.util.ArrayList;
 
-public class Empresa {
+public  class Empresa {
     private String nombre;
-    private ArrayList<Empleado> planilla = new ArrayList<>();
+    private ArrayList<Empleado> planilla;
 
     public Empresa(String nombre){
         this.nombre = nombre;
@@ -16,12 +16,6 @@ public class Empresa {
 
     public ArrayList<Empleado> getPlanilla() {
         return planilla;
-    }
-
-    @Override
-    public String toString() {
-        return " planilla=" + planilla +
-                '}';
     }
 
     public void addEmpleado(Empleado trabajador){
@@ -50,4 +44,3 @@ public class Empresa {
 
         return String.valueOf(i)
     }
-}
