@@ -1,4 +1,4 @@
-package com.JJCF.x00049419;
+package com.RHFA_00118519.x;
 
 public class PlazaFija extends Empleado {
     private int extension;
@@ -15,4 +15,5 @@ public class PlazaFija extends Empleado {
     public void setExtension(int extension) {
         this.extension = extension;
     }
+
 }

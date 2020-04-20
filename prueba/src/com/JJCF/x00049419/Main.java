@@ -37,10 +37,6 @@ public class Main {
         ServicioProfesional userq1;
         PlazaFija user2q;
 
-
-
-
-
         do{
             System.out.println(Inc);
             System.out.println("\nRegistro de empleados");
@@ -123,37 +119,28 @@ LetterBadException.validar(opc);
                                 System.out.println(CalculadorImpuestos.CalcularPago(e));
 
                             }
-
-
-
                             break;
+
                         case 2:
                             for(ServicioProfesional e: listageneral2){
                                 System.out.println("nombre:");
                                 System.out.println(e.getNombre());
                                 System.out.println("sueldo:");
                                 System.out.println(CalculadorImpuestos.CalcularPago(e));
-                                break;
-
-                            }
 
 
+                            } break;
 
-                            break;
+                        default:
+                            System.out.println("Error"); break;
+
                     }
                     break;
 
-
-
-
-
-
-
-
-
                 case 5:
+                    System.out.println("Imprimiendo el total....");
 
-                    //System.out.print();
+                    break;
 
                 case 6:
                     opc = 6;

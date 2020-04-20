@@ -1,8 +1,8 @@
-package com.JJCF.x00049419;
+package com.RHFA_00118519.x;
 
 public class LetterBadException {
     public static void validar(double numero){
-        if(Character.isDigit((char) numero)){
+        if(Character.isDigit((int) numero)){
             throw new ArithmeticException("ha ingresado una letra o frase");
         }
     }
@@ -12,5 +12,3 @@ public class LetterBadException {
         }
     }
 }
-
-
