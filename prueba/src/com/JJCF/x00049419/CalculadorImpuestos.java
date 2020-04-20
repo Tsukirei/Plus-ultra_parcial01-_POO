@@ -10,7 +10,7 @@ public class CalculadorImpuestos {
 
     }
 
-    public static void CalcularPago(Empleado mop) {
+    public static double CalcularPago(Empleado mop) {
         double AFP;
         double ISSS;
         double restan;
@@ -53,6 +53,7 @@ public class CalculadorImpuestos {
                 renta2 = ((ServicioProfesional) mop).salario * 0.1;
                 pagoReal = ((ServicioProfesional) mop).salario - renta2;
             }
+
         }
 
 
@@ -63,5 +64,6 @@ public class CalculadorImpuestos {
                 +"Total AFP: "+ totalAFP;
     }*/
 
+        return pagoReal;
     }
 }

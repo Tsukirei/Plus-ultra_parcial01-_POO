@@ -1,6 +1,7 @@
 package com.JJCF.x00049419;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -14,10 +15,14 @@ public class Main {
         Scanner lect5 = new Scanner(System.in);
         Scanner lect6 = new Scanner(System.in);
         Scanner leave1 = new Scanner(System.in);
+        Scanner Nombre = new Scanner(System.in);
+        Scanner Nombre2 = new Scanner(System.in);
+         ArrayList<PlazaFija>  listageneral = new ArrayList<>();
+         ArrayList<ServicioProfesional>  listageneral2 = new ArrayList<>();
         String leaveTrabajo;
-        String Inc = "Plus Ultra.inc";
         String user;
         String type;
+        String Inc = "Plus Ultra.inc";
         int law;
         int opc;
         byte opc2;
@@ -25,24 +30,34 @@ public class Main {
         int ext;
         double pagoPrimerizo;
         Empresa port = new Empresa(Inc);
+        double salariado;
+        String sunombre;
+        String f="juguete";
+        int opc3;
+        ServicioProfesional userq1;
+        PlazaFija user2q;
+
+
 
 
 
         do{
             System.out.println(Inc);
-            System.out.println("Registro de empleados");
+            System.out.println("\nRegistro de empleados");
             System.out.println("1) Agregar empleado" + "\n2) Despedir empleado" + "\n3) Ver lista de empleados"
                     + "\n4) Calcular sueldo" + "\n5) Mostrar totales" + "\n6) Salir");
             System.out.print("Opcion escogida: ");
             opc = toma.nextInt();
+LetterBadException.validar(opc);
 
             switch (opc) {
 
                 case 1:
                     System.out.print("Ingrese el nombre del empleado: ");
                     user = lect1.nextLine();
-                    System.out.print("¿Que puesto maneja el empleado? \n1) Servicio Profesional\n2) Plaza Fija\nOpcion a escoger: ");
+                    System.out.print("¿Que puesto maneja el empleado? \n1)Servicio Profesional\n2)Plaza Fija\nOpcion a escoger: ");
                     opc2 = lect2.nextByte();
+                    NumberBadforException.comprobando(opc2);
 
                     switch (opc2) {
                         case 1:
@@ -51,11 +66,15 @@ public class Main {
                             dui = lect3.nextLine();
                             System.out.print("Salario primerizo del empleado: ");
                             pagoPrimerizo = lect4.nextDouble();
+                            LetterBadException.validar(pagoPrimerizo);
                             System.out.print("Ingrese los meses de su contrato: ");
                             law = lect5.nextInt();
-                            ServicioProfesional empleadoSP = new ServicioProfesional(user, type, pagoPrimerizo, law);
+                            LetterBadException.validando(law);
                             Documento registroDoc = new Documento(user, dui);
+                            ServicioProfesional empleadoSP = new ServicioProfesional(user, type, pagoPrimerizo, law);
+                            listageneral2.add(new ServicioProfesional(user, f ,pagoPrimerizo,law));
                             empleadoSP.addDocumento(registroDoc);
+
                             port.addEmpleado(empleadoSP);
                             break;
                         case 2:
@@ -64,13 +83,14 @@ public class Main {
                             dui = lect3.nextLine();
                             System.out.print("Salario primerizo del empleado: ");
                             pagoPrimerizo = lect4.nextDouble();
+                            LetterBadException.validar(pagoPrimerizo);
                             System.out.print("Ingrese la extension del empleado: ");
                             ext = lect6.nextInt();
-                            PlazaFija workerPF = new PlazaFija(user, type, pagoPrimerizo, ext);
+                            LetterBadException.validando(ext);
+                            PlazaFija empleadoPF = new PlazaFija(user, type, pagoPrimerizo, ext);
                             Documento registroDoc2 = new Documento(user, dui);
-                            workerPF.addDocumento(registroDoc2);
-                            port.addEmpleado(workerPF);
-
+                            port.addEmpleado(empleadoPF);
+                            listageneral.add(new PlazaFija(user, f ,pagoPrimerizo,ext));
                             break;
                         default:
                             System.out.println("Error");
@@ -80,21 +100,60 @@ public class Main {
                     break;
 
                 case 2:
-                    System.out.println("Ingrese el nombre del empleado a despedir");
+                    System.out.println("Nombre del empleado a despedir: ");
                     leaveTrabajo = leave1.nextLine();
-                    port.quitEmpleado(leaveTrabajo);
-                    break;
-
+                    port.quitEmpleado(leaveTrabajo); break;
 
                 case 3:
                     System.out.println("Mostrando:");
-                    System.out.println(port.toString());
-
-                    break;
+                    System.out.println(port.toString()); break;
 
                 case 4:
 
-                    case 5:
+                    System.out.println("Ingrese 1 si desea buscar al empleado en plaza fija, 2 si es servicio " +
+                            "profesional:");
+                    opc3=Nombre2.nextInt();
+                    NumberBadforException.comprobando(opc3);
+                    switch(opc3) {
+                        case 1:
+                            for(PlazaFija e: listageneral){
+                                System.out.println("nombre:");
+                                System.out.println(e.getNombre());
+                                System.out.println("sueldo:");
+                                System.out.println(CalculadorImpuestos.CalcularPago(e));
+
+                            }
+
+
+
+                            break;
+                        case 2:
+                            for(ServicioProfesional e: listageneral2){
+                                System.out.println("nombre:");
+                                System.out.println(e.getNombre());
+                                System.out.println("sueldo:");
+                                System.out.println(CalculadorImpuestos.CalcularPago(e));
+                                break;
+
+                            }
+
+
+
+                            break;
+                    }
+                    break;
+
+
+
+
+
+
+
+
+
+                case 5:
+
+                    //System.out.print();
 
                 case 6:
                     opc = 6;
